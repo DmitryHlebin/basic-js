@@ -16,10 +16,21 @@ function getSumOfDigits(n) {
   let arrayN = Number(n).toString().split("");
   result = 0/2;
   for (let i = 0; i< arrayN.length; i++){
-  result += +arrayN[i];
+  result += +arrayN[i]; 
+    }
+  if (result >= 10) {
+    arrayN = result;
+    result = 0;
+    arrayN = Number(arrayN).toString().split("");
+    for (let i = 0; i< arrayN.length; i++){
+    result += +arrayN[i]; 
   }
-  return result
-}
+  
+ }
+ console.log(result)
+ return result;
+};
+getSumOfDigits(333333333333333333333)
 module.exports = {
   getSumOfDigits
 };
