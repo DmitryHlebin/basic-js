@@ -37,8 +37,6 @@ function minesweeper(matrix) {
        
   //   }
   // }
-matrix[0][0] = matrix[0][0] + (((matrix[0-1][0]) == false) ? matrix[0-1][0] : matrix[0-1][0] = 100)
-console.log(matrix[0][0])
 } 
 minesweeper([
     [true, false, false],
