@@ -16,14 +16,31 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function renameFiles(names) {
-  // let result;
-  // for(let i = 0; i <names.length; i++) {
-  //   if(names.indexOf(names[i], i+1) != -1){
-  //     names[names.indexOf(names[i], i+1)] = names[names.indexOf(names[i], i+1)] + '(1)'
-  //     --i;
-  //   }
-  // }
-  console.log(names)
+  let result = [];
+  let number = 1;
+  let count;
+    names.forEach(function(item, index, array) {
+      if (result.indexOf(item) == -1){
+        result.push(item)
+      } else {
+          number = 1;
+          item = `${item}(${(number)})`;
+
+          if(result.indexOf(item) != -1){
+            while(result.indexOf(item) != -1){
+              item = item.substring(0, item.length - 3);
+              number++
+              item = `${item}(${(number)})`             
+            }
+            result.push(item);
+          } else {
+            result.push(item);
+          }
+
+      }
+    });
+    console.log(result)
+    return result
 }
 
 
